@@ -1,63 +1,135 @@
-# Next.js Framework Starter
+# DataLostFound.com - Veeam Backup MSP Website
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/next-starter-template)
+A modern, high-performance website for a Veeam Backup MSP reseller, built with Astro and deployed to Cloudflare Workers.
 
-<!-- dash-content-start -->
+## 🚀 Features
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's deployed on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+- **Modern Tech Stack**: Built with Astro for optimal performance
+- **Cloudflare Workers**: Optimized for edge deployment
+- **Responsive Design**: Beautiful UI that works on all devices
+- **Veeam-Inspired**: Professional design similar to Veeam's website
+- **SEO Optimized**: Built-in SEO best practices
+- **Fast Loading**: Minimal JavaScript, maximum performance
 
-This template uses [OpenNext](https://opennext.js.org/) via the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare), which works by taking the Next.js build output and transforming it, so that it can run in Cloudflare Workers.
+## 📦 Tech Stack
 
-<!-- dash-content-end -->
+- **Framework**: Astro 4.x
+- **Styling**: Tailwind CSS
+- **Deployment**: Cloudflare Workers/Pages
+- **UI Components**: React (for interactive components)
+- **TypeScript**: Full type safety
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or pnpm
+
+### Installation
 
 ```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/next-starter-template
-```
-
-A live public deployment of this template is available at [https://next-starter-template.templates.workers.dev](https://next-starter-template.templates.workers.dev)
-
-## Getting Started
-
-First, run:
-
-```bash
+# Install dependencies
 npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
-```
 
-Then run the development server (using the package manager of your choice):
-
-```bash
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Deployment to Cloudflare
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Install Wrangler CLI (if not already installed):
+```bash
+npm install -g wrangler
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Login to Cloudflare:
+```bash
+wrangler login
+```
 
-## Deploying To Production
+3. Deploy:
+```bash
+npm run deploy
+```
 
-| Command                           | Action                                       |
-| :-------------------------------- | :------------------------------------------- |
-| `npm run build`                   | Build your production site                   |
-| `npm run preview`                 | Preview your build locally, before deploying |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare    |
-| `npm wrangler tail`               | View real-time logs for all Workers          |
+Or use Cloudflare Pages through the dashboard:
+1. Connect your Git repository
+2. Set build command: `npm run build`
+3. Set build output directory: `dist`
+4. Deploy!
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+/
+├── public/           # Static assets
+├── src/
+│   ├── components/   # Reusable components
+│   ├── layouts/      # Page layouts
+│   ├── pages/        # Route pages
+│   └── styles/       # Global styles
+├── astro.config.mjs  # Astro configuration
+├── tailwind.config.mjs # Tailwind configuration
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Colors
+
+Edit the color scheme in `tailwind.config.mjs`:
+
+```javascript
+colors: {
+  'primary': '#00B336',      // Veeam green
+  'primary-dark': '#009929',
+  'secondary': '#0052CC',
+  // ... more colors
+}
+```
+
+### Content
+
+All page content can be edited in the `src/pages/` directory:
+- `index.astro` - Homepage
+- `services.astro` - Services page
+- `solutions.astro` - Solutions page
+- `about.astro` - About page
+- `contact.astro` - Contact page
+
+## 📄 Pages
+
+- **Home** (`/`) - Main landing page with hero, services overview, and CTAs
+- **Services** (`/services`) - Detailed service offerings
+- **Solutions** (`/solutions`) - Industry-specific solutions
+- **About** (`/about`) - Company information
+- **Contact** (`/contact`) - Contact form and information
+
+## 🔧 Configuration
+
+### Cloudflare Adapter
+
+The site is configured to use the Cloudflare adapter with SSR capabilities. You can switch to static mode by changing `output` in `astro.config.mjs`:
+
+```javascript
+export default defineConfig({
+  output: 'static', // or 'hybrid' for mixed static/SSR
+  // ...
+});
+```
+
+## 📞 Support
+
+For issues or questions, please contact the development team.
+
+## 📝 License
+
+All rights reserved © DataLostFound.com
+
